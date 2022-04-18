@@ -1,0 +1,20 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dev-http {8080 "public"}
+
+ :dependencies
+ [[net.sekao/odoyle-rules "0.11.0"]
+  [com.cerner/clara-rules "0.21.1"]
+  [rum "0.12.6"]
+  ]
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+        :modules {:main {:init-fn demo/init}}}}}
+        ; change this back to demo
